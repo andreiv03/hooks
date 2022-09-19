@@ -35,5 +35,8 @@
   },
   "files": [
     "./lib/**/*"
-  ]
+  ],
+  "publishConfig": {
+    "@andreiv03:registry": "https://npm.pkg.github.com"
+  }
 }
