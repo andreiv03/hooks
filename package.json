@@ -5,7 +5,9 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,12 @@
   },
   "homepage": "https://github.com/andreiv03/react-hooks#readme",
   "devDependencies": {
+    "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.8.3"
   },
   "files": [

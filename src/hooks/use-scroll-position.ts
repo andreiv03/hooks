@@ -14,11 +14,11 @@ export const useScrollPosition = () => {
         x: Math.abs(document.body.getBoundingClientRect().left),
         y: Math.abs(document.body.getBoundingClientRect().top)
       });
-    }
+    };
 
     window.addEventListener("scroll", listener);
     return () => window.removeEventListener("scroll", listener);
   }, []);
 
   return scrollPosition;
-}
+};

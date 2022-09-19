@@ -14,11 +14,11 @@ export const useWindowSize = () => {
         height: window.innerHeight,
         width: window.innerWidth
       });
-    }
+    };
 
     window.addEventListener("resize", listener);
     return () => window.removeEventListener("resize", listener);
   }, []);
 
   return windowSize;
-}
+};
