@@ -1,0 +1,28 @@
+{
+  "name": "@andreiv03/react-hooks",
+  "version": "1.0.0",
+  "description": "React Hooks NPM Package",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreiv03/react-hooks.git"
+  },
+  "author": "Andrei Voicu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreiv03/react-hooks/issues"
+  },
+  "homepage": "https://github.com/andreiv03/react-hooks#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.20",
+    "react": "^18.2.0",
+    "typescript": "^4.8.3"
+  },
+  "files": [
+    "./lib/**/*"
+  ]
+}
