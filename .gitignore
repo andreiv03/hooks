@@ -1,2 +1,5 @@
-/node_modules/
-/lib/
+# dependencies
+/node_modules
+
+# production
+/lib

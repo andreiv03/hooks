@@ -1,39 +1,32 @@
 {
-  "name": "@andreiv03/react-hooks",
-  "version": "1.0.0",
-  "description": "React Hooks NPM Package",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+  "author": "Andrei Voicu",
+  "bugs": {
+    "url": "https://github.com/andreiv03/react-hooks/issues"
   },
+  "description": "React Hooks NPM Package",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "typescript": "^4.9.4"
+  },
+  "files": [
+    "./lib/**/*"
+  ],
+  "homepage": "https://github.com/andreiv03/react-hooks#readme",
+  "license": "MIT",
+  "name": "@andreiv03/react-hooks",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreiv03/react-hooks.git"
   },
-  "author": "Andrei Voicu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andreiv03/react-hooks/issues"
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "homepage": "https://github.com/andreiv03/react-hooks#readme",
-  "devDependencies": {
-    "@types/node": "^18.7.18",
-    "@types/react": "^18.0.20",
-    "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.8.3"
-  },
-  "files": [
-    "./lib/**/*"
-  ]
+  "types": "./lib/index.d.ts",
+  "version": "1.0.0"
 }
