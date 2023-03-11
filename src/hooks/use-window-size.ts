@@ -1,14 +1,15 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { constants } from "utils/constants";
 
 export const useWindowSize = () => {
-  const isSSR = typeof window === "undefined";
-
-  const [windowSize, setWindowSize] = React.useState({
-    height: isSSR ? 0 : window.innerHeight,
-    width: isSSR ? 0 : window.innerWidth
+  const [windowSize, setWindowSize] = useState({
+    height: constants.IS_CLIENT ? window.innerHeight : 0,
+    width: constants.IS_CLIENT ? window.innerWidth : 0
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (!constants.IS_CLIENT) return;
+
     const listener = () => {
       setWindowSize({
         height: window.innerHeight,

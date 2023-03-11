@@ -1,14 +1,15 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { constants } from "utils/constants";
 
 export const useScrollPosition = () => {
-  const isSSR = typeof document === "undefined";
-
-  const [scrollPosition, setScrollPosition] = React.useState({
-    x: isSSR ? 0 : document.body.getBoundingClientRect().left,
-    y: isSSR ? 0 : document.body.getBoundingClientRect().top
+  const [scrollPosition, setScrollPosition] = useState({
+    x: constants.IS_CLIENT ? document.body.getBoundingClientRect().left : 0,
+    y: constants.IS_CLIENT ? document.body.getBoundingClientRect().top : 0
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (!constants.IS_CLIENT) return;
+
     const listener = () => {
       setScrollPosition({
         x: Math.abs(document.body.getBoundingClientRect().left),

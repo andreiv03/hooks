@@ -5,28 +5,28 @@
   },
   "description": "React Hooks NPM Package",
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
+    "@types/node": "^18.15.0",
+    "@types/react": "^18.0.28",
     "react": "^18.2.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   },
   "files": [
-    "./lib/**/*"
+    "lib/**/*"
   ],
   "homepage": "https://github.com/andreiv03/react-hooks#readme",
   "license": "MIT",
   "name": "@andreiv03/react-hooks",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreiv03/react-hooks.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "prepare": "npm run build",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "version": "git add -A src"
   },
-  "types": "./lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "version": "1.1.0"
 }

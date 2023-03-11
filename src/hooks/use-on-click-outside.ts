@@ -1,19 +1,17 @@
-import React from "react";
+import { type MutableRefObject, useEffect } from "react";
 
-function assertEventTargetIsNode(
-  eventTarget: EventTarget | null
-): asserts eventTarget is Node {
-  if (!eventTarget || !("nodeType" in eventTarget))
-    throw new Error("useOnClickOutside hook expects a valid node element!");
-}
+import { assertEventTargetIsNode } from "utils/assertions";
+import { constants } from "utils/constants";
 
-export const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
+export const useOnClickOutside = <T extends HTMLElement>(
   callback: (event: Event) => void,
-  ref: React.MutableRefObject<T>
+  ref: MutableRefObject<T>
 ) => {
-  React.useEffect(() => {
+  useEffect(() => {
+    if (!constants.IS_CLIENT) return;
+
     const listener = (event: Event) => {
-      assertEventTargetIsNode(event.target);
+      assertEventTargetIsNode(event.target, "useOnClickOutside");
       if (!ref.current || ref.current.contains(event.target)) return;
       callback(event);
     };
