@@ -1,9 +1,9 @@
-import React from "react";
+import { type FC, useRef, useState } from "react";
 
 type ComponentProps = { children: JSX.Element | JSX.Element[] };
 
 export interface UseMountAnimation {
-  Component: React.FC<ComponentProps>;
+  Component: FC<ComponentProps>;
   handleStartAnimation: () => void;
   handleStopAnimation: (callback?: () => void) => void;
   isMounted: boolean;
@@ -15,9 +15,10 @@ export const useMountAnimation = (
   },
   initial: boolean = false
 ): UseMountAnimation => {
-  const componentRef = React.useRef({} as HTMLDivElement);
-  const [isMounted, setIsMounted] = React.useState(initial);
-  const [isVisible, setIsVisible] = React.useState(initial);
+  const componentRef = useRef({} as HTMLDivElement);
+
+  const [isMounted, setIsMounted] = useState(initial);
+  const [isVisible, setIsVisible] = useState(initial);
 
   const handleStartAnimation = () => {
     setIsMounted(true);
@@ -31,7 +32,7 @@ export const useMountAnimation = (
     return () => componentRef.current.removeEventListener("animationend", listener);
   };
 
-  const Component: React.FC<ComponentProps> = ({ children }) => {
+  const Component: FC<ComponentProps> = ({ children }) => {
     return isVisible ? (
       <div
         className={`${styles["animated_component"]} ${isMounted ? styles["mounted"] : ""}`}

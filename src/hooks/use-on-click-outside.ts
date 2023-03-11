@@ -1,7 +1,7 @@
 import { type MutableRefObject, useEffect } from "react";
 
-import { assertEventTargetIsNode } from "utils/assertions";
-import { constants } from "utils/constants";
+import { assertEventTargetIsNode } from "../utils/assertions";
+import { constants } from "../utils/constants";
 
 export const useOnClickOutside = <T extends HTMLElement>(
   callback: (event: Event) => void,

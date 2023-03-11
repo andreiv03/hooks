@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { constants } from "utils/constants";
+import { constants } from "../utils/constants";
 
 export const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({

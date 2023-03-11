@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { constants } from "utils/constants";
+import { constants } from "../utils/constants";
 
 export const useKeyPress = (targetKey: string) => {
   const [isKeyPressed, setIsKeyPressed] = useState(false);
