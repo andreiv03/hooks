@@ -20,16 +20,16 @@
     "strictPropertyInitialization": true,
     "useUnknownInCatchVariables": true,
 
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "module": "CommonJS",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "rootDir": "src",
-    "typeRoots": ["src/types", "node_modules/@types"],
+    "rootDir": "./src",
+    "typeRoots": ["./src/types", "./node_modules/@types"],
 
     "declaration": true,
     "noEmit": false,
-    "outDir": "lib",
+    "outDir": "./lib",
     "preserveValueImports": false,
     "removeComments": true,
     "sourceMap": true,
@@ -49,6 +49,6 @@
 
     "skipLibCheck": false
   },
-  "exclude": ["lib", "node_modules"],
-  "include": ["src"]
+  "exclude": ["./lib", "./node_modules"],
+  "include": ["./src"]
 }
