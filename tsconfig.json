@@ -32,7 +32,7 @@
     "outDir": "./lib",
     "preserveValueImports": false,
     "removeComments": true,
-    "sourceMap": true,
+    "sourceMap": false,
 
     "allowJs": true,
     "checkJs": true,
